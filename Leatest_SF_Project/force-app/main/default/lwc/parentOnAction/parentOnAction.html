@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="Passing data on Action" icon-name="custom:custom11">
+        <div class="slds-m-around_medium">
+           <lightning-input type="number" name="Percentage" label="Enter the Vale" onclick={changehandler} value={Percentage}></lightning-input>
+        </div>
+        <c-child-on-action percentage={Percentage}></c-child-on-action>
+    </lightning-card>
+</template>

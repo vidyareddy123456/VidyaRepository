@@ -1,0 +1,31 @@
+<aura:component Controller="InteDML" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="na" type="string"/>
+    <aura:attribute name="rg" type="string"/>
+    <aura:attribute name="ind" type="string"/>
+    <aura:attribute name="acclst" type="list"/>
+    <aura:attribute name="msg" type="string"/>
+    <aura:attribute name="status" type="boolean"/>
+    <lightning:card>
+        <lightning:input type="string" label="Name" value="{!v.na}"/>
+        <lightning:input type="string" label="Rating" value="{!v.rg}"/>
+        <lightning:input type="string" label="Industry" value="{!v.ind}"/>
+        <br/><br/>
+        <lightning:button variant="brand" label="Insert" onclick="{!c.Insert}"/>
+        <div>
+            <aura:if isTrue="{!v.status}">
+                <aura:iteration items="{!v.acclst}" var="ac">
+                    <lightning:card title="{!ac.Name}">
+                    <p>Name: {!ac.Name}</p>
+                    <p>Industry: {!ac.Industry}</p>
+                    <p>Rating: {!ac.Rating}</p>
+                    </lightning:card>
+                </aura:iteration>
+                <div>
+                <aura:set attribute="false">
+                    <p>{!v.msg}</p>
+                </aura:set>
+               </div>
+            </aura:if>
+        </div>
+    </lightning:card>
+</aura:component>

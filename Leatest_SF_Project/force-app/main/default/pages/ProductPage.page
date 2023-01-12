@@ -1,0 +1,42 @@
+<apex:page controller="ProductCreation">
+    <center><apex:image value="{!$Resource.logo}"></apex:image></center><br/><br/><br/><br/>
+    <apex:form >
+        <table align="center">
+            <tr>
+                <td>Product Name</td>
+                 <td><apex:inputText value="{!name}"/></td>
+            </tr> 
+            <tr>
+                <td>Product id</td>
+                 <td><apex:inputText value="{!id}"/></td>
+            </tr> 
+            <tr>
+                <td>Price</td>
+                 <td><apex:inputText value="{!price}"/></td>
+            </tr>
+             <tr>
+                <td>Manufacturing Date</td>
+                 <td><apex:inputText value="{!mdate}"/></td>
+            </tr>
+             <tr>
+                <td>Expirt Date</td>
+                 <td><apex:inputText value="{!edate}"/></td>
+            </tr>
+            <tr>
+                <td align="center"><apex:commandButton value="Save" action="{!CreateRecord}"/>
+                </td>
+            </tr>
+        </table>
+        <center><apex:outputText ><span style="color:red">Result :</span>{!result}</apex:outputText></center>
+        <apex:pageBlock title="Records" >
+            
+            <apex:pageBlockTable value="{!lstproducts}" var="pro">
+                <apex:column value="{!pro.Name}" />
+                <apex:column value="{!pro.Product_id__c}"/>
+                <apex:column value="{!pro.Price__c}"/>
+                <apex:column value="{!pro.Manu_Date__c}"/>
+                <apex:column value="{!pro.Manu_Date__c}"/>                  
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

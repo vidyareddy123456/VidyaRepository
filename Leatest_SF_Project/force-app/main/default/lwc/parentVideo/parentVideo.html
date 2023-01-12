@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Parent Component">
+        <div>{messageChild}</div>
+       <c-child-video my-name = {greeting} onchildname={handlechildmessage}></c-child-video>
+       <Div>
+        <lightning-button type="brand" label="Change Value" onclick={handlechange}></lightning-button>
+       </Div>
+       <div>
+        <lightning-button type="brand" label="Child Method" onclick={handlecall}></lightning-button>
+       </div>
+    </lightning-card>
+</template>

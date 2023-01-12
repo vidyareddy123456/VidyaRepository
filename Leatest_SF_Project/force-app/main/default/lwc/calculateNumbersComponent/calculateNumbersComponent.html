@@ -1,0 +1,10 @@
+<template>
+    <lightning-card  title="Calculating Numbers" icon-name="custom:custom3">
+        <lightning-button label="Submit" onclick={handleClick}></lightning-button>
+        <p class="slds-p-horizontal_small">
+            <lightning-input type="number" name="fstNumber" value={fNumber} onchange={handleChange} label="Enter First Number"></lightning-input>
+            <lightning-input type="number" name="sndNumber" value={sNumber} onchange={handleChange} label="Enter Second Number"></lightning-input>
+        </p>
+        <p slot="footer"><b style="color:red">Output is:{output}</b></p>
+    </lightning-card>
+</template>

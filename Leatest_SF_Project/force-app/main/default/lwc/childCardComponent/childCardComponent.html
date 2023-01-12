@@ -1,0 +1,10 @@
+<template>
+        <template for:each={userDetails} for:item="user">
+            <div key={user.name}>
+                <h1>{user.name}</h1>
+                <p >{user.title}</p>
+                <p style="color:blueviolet"><button>{user.buttontext}</button></p>
+                <img src={user.imageUrl} alt={user.name} style="width:20px">
+            </div>
+        </template>
+</template>

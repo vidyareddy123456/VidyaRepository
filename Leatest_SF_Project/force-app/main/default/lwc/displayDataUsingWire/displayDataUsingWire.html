@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Display Account Records" icon-name="custom:custom2">
+       <div class="slds-p-around_medium">
+             <template for:each={result} for:item="acc">
+                <p key={acc.id}>{acc.Name}</p>
+             </template>
+       </div>
+    </lightning-card>
+</template>

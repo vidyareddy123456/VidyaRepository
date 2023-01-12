@@ -1,0 +1,28 @@
+<aura:component Controller="FetchRecords" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.Display}"/>
+    <aura:attribute type="string" name="msg"/>
+    <aura:attribute type="list" name="accountlist"/>
+    <lightning:card title="Account Records">
+        <div>
+        <table>
+            <tr>
+                <th>Account Name</th>
+                <th>Active</th>
+                <th>Rating</th>
+                <th>Industry</th>
+            </tr>
+            <aura:iteration items="{!v.accountlist}" var="acc">
+                <tr>
+                    <td>{!acc.Name}</td>
+                    <td>{!acc.Active__c}</td>
+                    <td>{!acc.Rating}</td>
+                    <td>{!acc.Industry}</td>
+                </tr>
+            </aura:iteration>
+        </table>
+            </div>
+        <div>
+            <h1>{!v.msg}</h1>
+        </div>
+    </lightning:card>
+</aura:component>

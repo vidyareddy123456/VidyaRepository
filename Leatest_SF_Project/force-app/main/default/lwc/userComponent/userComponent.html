@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="User Information" icon-name="custom:custom11">
+      <div class="slds-m-around_medium">
+        <lightning-input 
+        label="Enter first Name" 
+        type="text" 
+        value={user.firstName} 
+        name="fn"></lightning-input>
+        <lightning-input 
+        label="Enter Last Name" 
+        type="text" 
+        value={user.lastName} 
+        name="ln"></lightning-input>
+        <lightning-button 
+        type="brand" 
+        name="update user" 
+        label="Click to Update" 
+        onclick={changehandler}>
+       </lightning-button>
+      </div>
+    </lightning-card>
+</template>

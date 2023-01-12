@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Calculator" icon-name="custom:custom12">
+        <div class="slds-p-around_small">
+         <lightning-input name="fnumber" label="First Number" value={firstNumber} onchange={changehandler}></lightning-input>
+         <lightning-input name="lnumber" label="Last Number" value={lastNumber} onchange={changehandler}></lightning-input>
+     <div slot="footer">
+       <lightning-badge label={result}></lightning-badge>
+     </div>
+    </div>
+    </lightning-card>
+</template>

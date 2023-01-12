@@ -1,0 +1,22 @@
+<aura:component Controller="DisplayRecords" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.Display}"/>
+    <aura:attribute type="string" name="sts"/>
+    <aura:attribute type="list" name="options"/>
+    <aura:attribute type="list" name="accRecord"/>
+    <aura:attribute type="string" name="msg"/>
+    <aura:attribute type="list" name="cols"/>
+    <lightning:card title="Display Reocrds" iconName="standard:outcome">
+        <lightning:input type="string" name="status" value="{!v.sts}"/>
+        <lightning:combobox name="leads" label="Status" value="{!v.sts}" options="{!v.options}" onchange="{!c.Submit}"/>
+        <div>
+            <lightning:datatable
+                            keyField="id"
+                            columns="{!v.cols}"
+                            data="{!v.accRecord}"
+                            hideCheckboxColumn="false"/>
+         </div>
+        <div>
+            <h1>{!v.msg}</h1>
+        </div>
+    </lightning:card>
+</aura:component>

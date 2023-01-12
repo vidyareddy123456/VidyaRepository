@@ -1,0 +1,30 @@
+<aura:component controller="OAuthAthentication" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="status" type="boolean"/>
+    <aura:attribute name="msg" type="string"/>
+    <aura:attribute name="acclst" type="list"/>
+    <div>
+    <lightning:card title="Acc Records" iconName="standard:outcome">
+        <lightning:button variant="brand" label="Display Records" onclick="{!c.OAuth}"/>
+    </lightning:card>
+    </div>
+    <div>
+        <aura:if isTrue="{!v.status}">
+            <aura:iteration items="{!v.acclst}" var="acc">
+                <div class="slds-p-left_medium" style="color:red">
+                <lightning:card title="{!acc.Name}">
+                    <p>Name: {!acc.Name}</p>
+                    <p>Rating: {!acc.Rating}</p>
+                    <p>Industry: {!acc.Industry}</p>
+                    <p>Active: {!acc.Active__c}</p>
+                    <p>Phone: {!acc.Phone}</p>
+                </lightning:card>
+                    </div>
+            </aura:iteration>
+            <div>
+            <aura:set attribute="false">
+                <p>{!v.msg}</p>
+            </aura:set>
+                </div>
+        </aura:if>
+    </div>
+</aura:component>

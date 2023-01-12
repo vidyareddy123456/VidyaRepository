@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="Parent Comp" icon-name="utility:user">
+        <div class="slds-var-m-around_medium">
+           Count is : {countValue}
+        </div>
+        <c-child-l-w-c onaddition={handleonadd} onsubstraction={handleonSub}></c-child-l-w-c>
+    </lightning-card>
+</template>

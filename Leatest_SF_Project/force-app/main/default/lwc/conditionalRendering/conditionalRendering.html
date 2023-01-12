@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Conditional Rendering" icon-name="custom:custom1">
+        <button class="slds-button slds-button_brand" onclick={showhandler}>click me</button>
+       <template if:true={showtext}>
+        <h3>Hi, You can able to see the hidden text.</h3>
+       </template>
+    </lightning-card>
+    <lightning-card title="if:false demo" icon-name="custom:custom11">
+        <button class="slds-button slds-button_brand" onclick={hidehandler}>click me to hide the data</button>
+        <template if:false={hidetext}>
+            Hi, welcome to lightning web components.
+        </template>
+    </lightning-card>
+</template>

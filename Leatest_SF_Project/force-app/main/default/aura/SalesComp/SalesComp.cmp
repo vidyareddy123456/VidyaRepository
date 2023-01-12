@@ -1,0 +1,35 @@
+<aura:component controller="SalesConsumer" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="status" type="boolean"/>
+    <aura:attribute name="msg" type="string"/>
+    <aura:attribute name="poslst" type="list"/>
+    <div>
+    <lightning:card title="Records" iconName="standard:outcome">
+        <lightning:button variant="brand" label="display" onclick="{!c.DisplayData}"/>
+    </lightning:card>
+    </div>
+    <div>
+        <aura:if isTrue="{!v.status}">
+            <div class="slds-p-left_medium slds-grid slds-wrap" style="width:200%;color:red;background-color:black">
+            <aura:iteration items="{!v.poslst}" var="p">
+                
+                <lightning:Card title="{!p.Name}">
+                    
+                <p>Id:{!p.id}</p>
+                <p>Billing state:{!p.BillingState}</p>
+                <p>Phone:{!p.Phone}</p>
+                <p>Industry:{!p.Industry}</p>
+                <p>Rating:{!p.Rating}</p>
+                <p>Active__c:{!p.Active__c}</p>
+                        
+                </lightning:Card>
+                   
+            </aura:iteration>
+                </div>
+            <div>
+                <aura:set attribute="false">
+                    <p>{!v.msg}</p>
+                </aura:set>
+            </div>
+        </aura:if>
+    </div>
+</aura:component>
