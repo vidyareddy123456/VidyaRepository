@@ -2,6 +2,7 @@ import { LightningElement ,api} from 'lwc';
 
 export default class ChildVideo extends LightningElement {
     @api myName = 'Srividya Reddy';
+    //adding commit to test the repository//
 
     @api callChildMethod(setParam) {
         alert('This is The Child Method'+setParam.firstName);
