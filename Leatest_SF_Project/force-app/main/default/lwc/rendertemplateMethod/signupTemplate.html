@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Signup" icon-name="custom:custom11">
+        <div class="slds-var-p-around_medium">
+            <h1>Signup Form</h1>
+            <lightning-input type="text" label="FirstName"></lightning-input>
+            <lightning-input type="text" label="LastName"></lightning-input>
+            <lightning-input type="text" label="Email"></lightning-input>
+            <lightning-input type="text" label="Password"></lightning-input>
+            <lightning-button
+            variant="destructive"
+            title="back"
+            label="back"
+            onclick={handleclick}>
+            </lightning-button>
+            <lightning-button
+            variant="success"
+            title="Signup"
+            label="Signup"
+            onclick={submitHandler}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

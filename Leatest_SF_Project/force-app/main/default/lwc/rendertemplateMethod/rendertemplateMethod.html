@@ -1,3 +1,19 @@
 <template>
-    
+    <lightning-card title="rendering multiple template" icon-name="custom:custom1">
+        <div class="slds-var-p-around_medium">
+          <h1>Choose Your option</h1>
+          <lightning-button
+          variant="destructive"
+          title="Signup"
+          label="Signup"
+          onclick={handleclick}>
+        </lightning-button>
+        <lightning-button
+          variant="success"
+          title="Signin"
+          label="Signin"
+          onclick={handleclick}>
+        </lightning-button>
+        </div>
+    </lightning-card>
 </template>
