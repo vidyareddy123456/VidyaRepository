@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="child to parent communication" icon-name="custom:custom2">
+        <div class="slds-var-m-around_medium">
+           <template if:true={showHandler}>
+            <c-child-model-component>
+
+            </c-child-model-component>
+           </template>
+           <lightning-button label="show chid" onclick={clickHandler}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
