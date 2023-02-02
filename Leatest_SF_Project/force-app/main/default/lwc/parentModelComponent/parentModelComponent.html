@@ -1,12 +1,13 @@
 <template>
-    <lightning-card title="child to parent communication" icon-name="custom:custom2">
+    <lightning-card title="child to parent comunication" icon-name="custom:custom2">
         <div class="slds-var-m-around_medium">
-           <template if:true={showHandler}>
-            <c-child-model-component>
+            <h1>{msg}</h1>
+           <template if:true={dataVisible}>
+              <c-child-model-component onclose={transferHandler}>
 
-            </c-child-model-component>
+              </c-child-model-component>
            </template>
-           <lightning-button label="show chid" onclick={clickHandler}></lightning-button>
+           <lightning-button label="show child" onclick={clickHandler}></lightning-button>
         </div>
     </lightning-card>
 </template>

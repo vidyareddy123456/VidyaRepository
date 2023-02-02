@@ -1,9 +1,14 @@
 import { LightningElement } from 'lwc';
 
 export default class ParentModelComponent extends LightningElement {
-    showHandler= false
-
+    dataVisible = false
+    msg
     clickHandler(){
-        this.showHandler = true
+        this.dataVisible = true
+    }
+
+    transferHandler(event){
+        this.msg = event.detail.msg
+        this.dataVisible = false
     }
 }
